@@ -17,7 +17,7 @@ public class DockerHelloWorld {
 	@GetMapping
 	public String getRoot() {
 		
-		return "Welcome to home ";
+		return "Welcome to home";
 	}
 	
 	
