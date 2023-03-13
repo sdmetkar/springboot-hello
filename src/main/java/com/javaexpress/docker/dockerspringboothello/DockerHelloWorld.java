@@ -8,9 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/docker")
 public class DockerHelloWorld {
 
-	@GetMapping
+	@GetMapping("/name")
 	public String getName() {
 		
 		return "Welcome to deployment in docker";
 	}
+	
+	@GetMapping
+	public String getRoot() {
+		
+		return "Welcome to home";
+	}
+	
+	
 }
