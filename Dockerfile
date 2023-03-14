@@ -1,11 +1,11 @@
-FROM maven:3.5-jdk-8-alpine as build
+#FROM maven:3.5-jdk-8-alpine as build
 
-WORKDIR /app
+#WORKDIR /app
 
-COPY pom.xml .
-COPY src src
+#COPY pom.xml .
+#COPY src src
 
-run mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
+#run mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
 
 #FROM openjdk:8-jdk-alpine
 
