@@ -7,7 +7,7 @@ COPY src src
 
 RUN mvn clean package -DskipTests
 
-FROM eclipse-temurin:11
+FROM openjdk:8-jdk-alpine
 
 COPY --from=build /app/target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
 #COPY /target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
