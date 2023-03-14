@@ -30,7 +30,7 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
-        
+
       - uses: uraimo/run-on-arch-action@v2
         name: Run commands
         id: runcmd
@@ -65,7 +65,7 @@ jobs:
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -80,7 +80,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello-multistage:2.0
           file: ./Dockerfile-multistage
