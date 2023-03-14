@@ -6,9 +6,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        include:
-          - arch: aarch64
-            distro: ubuntu18.04
+        platform: [amd64,arm64]
     steps:
       -
         name: Checkout
