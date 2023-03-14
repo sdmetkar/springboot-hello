@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY pom.xml .
 COPY src src
+COPY mvnw .
+COPY mvnw.cmd .
 
-#run mvn package -Dmaven.test.skip=true
-run javac *.java
-run jar cf JarExample.jar *.class
+run mvnw package -Dmaven.test.skip=true
 
 EXPOSE 8080
 
