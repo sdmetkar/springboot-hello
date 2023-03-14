@@ -43,7 +43,7 @@ jobs:
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -58,7 +58,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello:2.0
           file: ./Dockerfile-singlestage
