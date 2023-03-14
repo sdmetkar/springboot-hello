@@ -9,7 +9,7 @@ COPY src src
 
 RUN dos2unix mvnw
 RUN chmod +x mvnw
-RUN ./mvnw install -DskipTests
+RUN /bin/sh -c “mvnw clean install”
 
 EXPOSE 8080
 
