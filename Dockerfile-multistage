@@ -7,6 +7,7 @@ COPY src src
 
 run mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
 
+#JRE base image can be used here but no stable one found
 FROM openjdk:8-jdk-alpine
 
 COPY --from=build /app/target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
