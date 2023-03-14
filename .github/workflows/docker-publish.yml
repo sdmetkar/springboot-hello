@@ -3,7 +3,7 @@ name: ci
 on: [push, pull_request]
 jobs:
   buildpush_job:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         platform: [amd64,arm64]
@@ -25,8 +25,7 @@ jobs:
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-        with:
-          platforms: linux/amd64
+
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -41,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/amd64
+          platforms: linux/arm64/v8
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello-multistage:2.0
           file: ./Dockerfile-multistage
