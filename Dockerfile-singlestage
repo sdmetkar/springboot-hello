@@ -7,7 +7,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN /bin/sh ./mvnw install -DskipTests
+RUN ./mvnw install -DskipTests
 
 EXPOSE 8080
 
