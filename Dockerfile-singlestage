@@ -6,6 +6,8 @@ COPY pom.xml .
 COPY src src
 
 #run mvn package -Dmaven.test.skip=true
+run javac *.java
+run jar cf JarExample.jar *.class
 
 EXPOSE 8080
 
