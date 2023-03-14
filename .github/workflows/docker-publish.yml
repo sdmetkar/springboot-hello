@@ -59,4 +59,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello:2.0
-          file: ./Dockerfile
+          file: ./Dockerfile-multistage
