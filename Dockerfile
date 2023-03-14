@@ -5,12 +5,12 @@ WORKDIR /app
 COPY pom.xml .
 COPY src src
 
-mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
+run mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
 
 #FROM openjdk:8-jdk-alpine
 
 #COPY --from=build /app/target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
-COPY /target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
+#COPY /target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
 
 EXPOSE 8080
 
