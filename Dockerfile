@@ -5,7 +5,7 @@ WORKDIR /app
 COPY pom.xml .
 COPY src src
 
-RUN mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
+mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
 
 #FROM openjdk:8-jdk-alpine
 
