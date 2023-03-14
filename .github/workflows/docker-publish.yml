@@ -41,5 +41,5 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: sdmetkar/springboot-hello:1.0
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello:1.0
           file: ./Dockerfile
