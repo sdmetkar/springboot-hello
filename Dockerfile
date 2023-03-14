@@ -7,10 +7,10 @@ COPY src src
 
 RUN mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
 
-FROM openjdk:8-jdk-alpine
+#FROM openjdk:8-jdk-alpine
 
-COPY --from=build /app/target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
-#COPY /target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
+#COPY --from=build /app/target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
+COPY /target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
 
 EXPOSE 8080
 
