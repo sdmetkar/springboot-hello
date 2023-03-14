@@ -9,4 +9,4 @@ run mvn --batch-mode --update-snapshots package -Dmaven.test.skip=true
 
 EXPOSE 8080
 
-CMD ["java","-jar","/app/javaexpress-springboot-docker.jar"]
+ENTRYPOINT ["java","-jar","/app/javaexpress-springboot-docker.jar"]
