@@ -13,4 +13,4 @@ RUN ./mvnw install -DskipTests
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/app/javaexpress-springboot-docker.jar"]
+ENTRYPOINT ["java","-jar","javaexpress-springboot-docker.jar"]
