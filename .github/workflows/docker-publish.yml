@@ -42,5 +42,5 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello-multistage-mavenbase:2.0
-          file: ./Dockerfile-multistage-mavenbase
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello-singlestage:2.0
+          file: ./Dockerfile-singlestage

@@ -7,9 +7,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN dos2unix mvnw
-RUN chmod +x mvnw
-RUN ./mvnw install -DskipTests
+RUN /mvnw package -DskipTests -Dmaven.javadoc.skip=true
 
 EXPOSE 8080
 
