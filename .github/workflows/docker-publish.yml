@@ -39,5 +39,5 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello-singlestage:2.0
-          file: ./Dockerfile-singlestage
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot-hello-multistage:2.0
+          file: ./Dockerfile-multistage
