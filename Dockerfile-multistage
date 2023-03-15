@@ -1,15 +1,11 @@
-FROM openjdk:8-jdk-alpine AS build
+FROM maven:3.8.7-openjdk-18-slim AS build
 
 WORKDIR /workspace/app
 
-COPY mvnw .
-COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN dos2unix mvnw
-RUN chmod +x mvnw
-RUN ./mvnw install -DskipTests
+RUN mvn package -DskipTests -Dmaven.javadoc.skip=true
 
 #JRE base image can be used to reduce image size but no stable one found
 FROM openjdk:8-jdk-alpine
