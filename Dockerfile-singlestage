@@ -7,7 +7,7 @@ COPY src src
 
 RUN mvn package -DskipTests -Dmaven.javadoc.skip=true
 
-COPY /workspace/app/target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
+COPY /target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
 
 EXPOSE 8080
 
